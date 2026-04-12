@@ -928,6 +928,85 @@ export const menuItemsStockistAdminPin = [
     icon: <PiBriefcase />,
     dropdownItems: [
       {
+        name: 'Transfer Point Promo',
+        href: routes.promo.wisata.transferPoint,
+      },
+      {
+        name: 'History Transfer Point Promo',
+        href: routes.promo.wisata.historyTransfer,
+      },
+    ],
+  },
+  {
+    name: 'Lihat PIN',
+    href: routes.lihatPin.index,
+    icon: <PiTrophy />,
+  },
+  {
+    name: 'Transfer PIN',
+    href: routes.transferPin.index,
+    icon: <PiArrowsHorizontal />,
+  },
+  {
+    name: 'Penarikan PIN',
+    href: routes.penarikanPin.index,
+    icon: <PiArrowsDownUp />,
+  },
+  {
+    name: 'List Stockist',
+    href: routes.stockist.list,
+    icon: <PiUsers />,
+    badge: '',
+  },
+
+  {
+    name: 'Personal',
+  },
+  // label end
+  {
+    name: 'Profil Saya',
+    href: routes.profil.index,
+    icon: <PiUserGear />,
+  },
+  {
+    name: 'Ganti Password',
+    href: routes.profil.ubahPassword,
+    icon: <PiLock />,
+  },
+];
+
+export const menuItemsStockistOwnerIPG = [
+  // label start
+  {
+    name: 'Menu',
+  },
+  // label end
+  {
+    name: 'Dashboard',
+    href: routes.dashboard.index,
+    icon: <PiHouseLineDuotone />,
+  },
+  {
+    name: 'Pembelian Produk',
+    href: '#',
+    icon: <PiShoppingCart />,
+    dropdownItems: [
+      {
+        name: 'Pembelian Produk',
+        href: routes.produk.index,
+      },
+      {
+        name: 'History Pembelian Stockist',
+        href: routes.produk.pesananStockist.index,
+      },
+    ],
+  },
+  {
+    name: 'Promo Wisata',
+    href: '#',
+    icon: <PiBriefcase />,
+    dropdownItems: [
+      {
         name: 'Generate Point Promo',
         href: routes.promo.wisata.generatePoint,
       },

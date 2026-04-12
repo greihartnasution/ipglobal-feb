@@ -9,6 +9,7 @@ import {
   menuItemsUser,
   menuItemsStockist,
   menuItemsStockistAdminPin,
+  menuItemsStockistOwnerIPG,
   menuItemsAdminStock,
   menuItemsKosongan,
   menuItemsAdminMember,
@@ -65,11 +66,13 @@ export function HeliumSidebarMenu() {
           ? menuItemsAdminMember
           : role === 'stockist' && username === 'adminpin2026'
             ? menuItemsStockistAdminPin
-            : role === 'member'
-              ? menuItemsUser
-              : role === 'stockist'
-                ? menuItemsStockist
-                : menuItemsKosongan;
+            : role === 'stockist' && username === 'owneripg'
+              ? menuItemsStockistOwnerIPG
+              : role === 'member'
+                ? menuItemsUser
+                : role === 'stockist'
+                  ? menuItemsStockist
+                  : menuItemsKosongan;
 
   const handleLogout = async () => {
     setIsLoggingOut(true);

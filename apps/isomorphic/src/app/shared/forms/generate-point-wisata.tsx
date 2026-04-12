@@ -220,7 +220,7 @@ export default function GeneratePointWisataPage() {
 
     if (
       session?.user?.role !== 'stockist' ||
-      session?.user?.id !== 'adminpin2026'
+      session?.user?.id !== 'owneripg'
     ) {
       router.push(routes.unauthorized.index);
     } else {

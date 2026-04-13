@@ -35,30 +35,29 @@ function QuantityInput({
   max: number;
   disabled?: boolean;
 }) {
-  const finalMax = Math.min(max, 2000);
-
   function handleIncrement() {
     if (disabled || value === undefined) return;
-    const newValue = Math.min(value + 1, finalMax);
-    onChange?.(newValue);
+    onChange?.(value + 1);
   }
 
   function handleDecrement() {
     if (disabled || value === undefined) return;
-    const newValue = Math.max(value - 1, 1);
-    onChange?.(newValue);
+    onChange?.(Math.max(value - 1, 1));
   }
 
   function handleOnChange(inputValue: number) {
     if (disabled) return;
+
     let newValue = Number(inputValue);
-    if (isNaN(newValue)) newValue = 1;
-    if (newValue < 1) newValue = 1;
-    if (newValue > finalMax) newValue = finalMax;
+
+    if (isNaN(newValue) || newValue < 1) {
+      newValue = 1;
+    }
+
     onChange?.(newValue);
   }
 
-  const isDisabled = disabled || finalMax === 0;
+  const isDisabled = disabled;
 
   return (
     <Input

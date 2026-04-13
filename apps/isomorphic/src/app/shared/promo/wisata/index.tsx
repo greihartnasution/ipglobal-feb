@@ -4,7 +4,7 @@ import cn from '@core/utils/class-names';
 import { useEffect, useState } from 'react';
 import { signIn, useSession } from 'next-auth/react';
 import Image from 'next/image';
-import imgTemplate from '@public/assets/img/promo-wisata-april-2026.jpg';
+import imgTemplate from '@public/assets/img/promo-wisata-april-2026-2.png';
 import WidgetCard from '@core/components/cards/widget-card';
 import { Alert, Button, Input, Text } from 'rizzui';
 import { fetchWithAuth } from '@/utils/fetchWithAuth';
@@ -41,7 +41,17 @@ export default function PromoWisataPage({ className }: { className?: string }) {
 
   const formatDateID = (date?: string) => {
     if (!date) return '-';
-    return new Date(date).toLocaleDateString('id-ID', {
+
+    // Pisahkan tanggal & waktu
+    const [datePart] = date.split(' ');
+
+    // Split DD-MM-YYYY
+    const [day, month, year] = datePart.split('-').map(Number);
+
+    // Buat Date object (month - 1 karena JS mulai dari 0)
+    const parsedDate = new Date(year, month - 1, day);
+
+    return parsedDate.toLocaleDateString('id-ID', {
       day: '2-digit',
       month: 'long',
       year: 'numeric',

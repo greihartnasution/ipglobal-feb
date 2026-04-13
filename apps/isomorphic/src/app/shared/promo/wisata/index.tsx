@@ -270,6 +270,28 @@ export default function PromoWisataPage({ className }: { className?: string }) {
               </div>
             </WidgetCard>
 
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {/* ORDER COUNT */}
+              {/* <div className="rounded-xl border border-gray-200 bg-gradient-to-br from-blue-50 to-white p-5">
+                      <p className="text-sm font-medium text-gray-500">
+                        Total Order Dihitung
+                      </p>
+                      <p className="mt-1 text-3xl font-bold text-blue-600">
+                        {pinStats.order_count}
+                      </p>
+                    </div> */}
+
+              {/* PIN COUNTED */}
+              <div className="rounded-xl border border-gray-200 bg-gradient-to-br from-amber-50 to-white p-5">
+                <p className="text-sm font-medium text-gray-500">
+                  Total POINT Terkumpul
+                </p>
+                <p className="mt-1 text-3xl font-bold text-amber-600">
+                  {dataPoint.toLocaleString('id-ID')}
+                </p>
+              </div>
+            </div>
+
             <HistoryTransferPointWisataTable typenya="received" />
           </div>
         </div>

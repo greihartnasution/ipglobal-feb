@@ -188,7 +188,7 @@ export default function TransferPointWisataPage() {
         });
       })
       .catch((error) => {
-        toast.error(<Text as="b">Transfer PIN Gagal</Text>);
+        toast.error(<Text as="b">Transfer POINT Gagal</Text>);
         console.error(error);
         setLoadingS(false);
       });
@@ -228,7 +228,9 @@ export default function TransferPointWisataPage() {
         /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
           if (data.amount > 2000) {
-            toast.error(<Text as="b">Max 2000 PIN dalam sekali transfer</Text>);
+            toast.error(
+              <Text as="b">Max 2000 POINT dalam sekali transfer</Text>
+            );
           } else {
             doTransfer({
               from: session?.user?.id,
@@ -305,7 +307,7 @@ export default function TransferPointWisataPage() {
                           </li>
                           <li>
                             <Text className="break-normal">
-                              Maksimal <strong>2000</strong> PIN dalam sekali
+                              Maksimal <strong>2000</strong> POINT dalam sekali
                               transfer
                             </Text>
                           </li>

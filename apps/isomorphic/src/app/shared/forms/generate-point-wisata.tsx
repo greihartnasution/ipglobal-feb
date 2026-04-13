@@ -36,13 +36,13 @@ function QuantityInput({
   disabled?: boolean;
 }) {
   function handleIncrement() {
-    if (disabled || value === undefined) return;
-    onChange?.(value + 1);
+    if (disabled) return;
+    onChange?.((value ?? 1) + 1);
   }
 
   function handleDecrement() {
-    if (disabled || value === undefined) return;
-    onChange?.(Math.max(value - 1, 1));
+    if (disabled) return;
+    onChange?.(Math.max((value ?? 1) - 1, 1));
   }
 
   function handleOnChange(inputValue: number) {
@@ -71,8 +71,7 @@ function QuantityInput({
       onChange={(e) => {
         const val = Number(e.target.value);
 
-        // prevent NaN & value < 1
-        if (!val || val < 1) {
+        if (isNaN(val) || val < 1) {
           handleOnChange(1);
           return;
         }
@@ -259,8 +258,9 @@ export default function GeneratePointWisataPage() {
                 reset,
                 formState: { errors },
               }) => {
-                const currentPinMax = dataPin;
-                const isDisabled = currentPinMax === 0;
+                // const currentPinMax = dataPin;
+                const currentPinMax = 0;
+                // const isDisabled = currentPinMax === 0;
 
                 return (
                   <>
@@ -288,7 +288,7 @@ export default function GeneratePointWisataPage() {
                                 value={value}
                                 onChange={onChange}
                                 max={currentPinMax}
-                                disabled={isDisabled}
+                                disabled={false}
                                 error={errors?.amount?.message}
                               />
                             )}

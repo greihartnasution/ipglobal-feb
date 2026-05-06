@@ -14,6 +14,7 @@ import imgFCMIST from '@public/assets/img/product/FCMIST.jpeg';
 import imgEGAM from '@public/assets/img/product/EGAM.jpeg';
 import imgACC from '@public/assets/img/product/ACC.jpg';
 import imgLP from '@public/assets/img/product/LP.jpeg';
+import imgBSRM from '@public/assets/img/product/BSRM.png';
 import { fetchWithAuth } from '@/utils/fetchWithAuth';
 
 export default function ProductDetails() {
@@ -85,7 +86,9 @@ export default function ProductDetails() {
                           ? imgLP
                           : product.product_id === 'PRD0007'
                             ? imgACC
-                            : defaultPlaceholder
+                            : product.product_id === 'PRD0008'
+                              ? imgBSRM
+                              : defaultPlaceholder
             }
           />
         </div>

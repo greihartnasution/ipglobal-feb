@@ -15,6 +15,7 @@ import imgFCMIST from '@public/assets/img/product/FCMIST.jpeg';
 import imgEGAM from '@public/assets/img/product/EGAM.jpeg';
 import imgACC from '@public/assets/img/product/ACC.jpg';
 import imgLP from '@public/assets/img/product/LP.jpeg';
+import imgBSRM from '@public/assets/img/product/BSRM.png';
 
 const columns = [
   {
@@ -42,7 +43,9 @@ const columns = [
                           ? imgLP
                           : String(row.id) === 'prd0007'
                             ? imgACC
-                            : defaultPlaceholder
+                            : String(row.id) === 'prd0008'
+                              ? imgBSRM
+                              : defaultPlaceholder
             }
             fill
             sizes="(max-width: 768px) 100vw"

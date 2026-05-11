@@ -32,7 +32,7 @@ export default function ProdukCard({
     <div className={cn(className)}>
       <Link
         href={routes.produk.detail(
-          String(generateSlug(`${name}-${product_id}`))
+          String(generateSlug(`${name}-${product_id}`)),
         )}
       >
         <div className="relative">
@@ -67,7 +67,8 @@ export default function ProdukCard({
             {description}
           </Text>
           <div className="mt-2 flex items-center font-semibold text-gray-900">
-            {toCurrency(Number(price))}
+            {/* {toCurrency(Number(price))} */}
+            {attribute?.price?.currency ?? "Rp 0,00"}
             {sold && (
               <span className="ps-1.5 text-[13px] font-normal text-gray-400 ms-auto">
                 Terjual: {sold}

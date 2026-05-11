@@ -69,7 +69,7 @@ export default function ProdukCard({
           <div className="mt-2 flex items-center font-semibold text-gray-900">
             {/* {toCurrency(Number(price))} */}
             {attribute?.price?.currency ?? "Rp 0,00"}
-            {sold && (
+            {!!sold && sold > 0 && (
               <span className="ps-1.5 text-[13px] font-normal text-gray-400 ms-auto">
                 Terjual: {sold}
               </span>
